@@ -1,16 +1,23 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <title> Anushree Majumdar</title>
-    </head>
-    <body>
-        <h1> Anushree Majumdar</h1>
-        <p> Hello everybody! My name is Anushree Majumdar. Right now, I am 14 years old. I am going to Neuqua Valley High School as a freshman! I love music! I play the piano and the violin, and I also sing Indian Classical Music. I also like listening to pop songs on the radio. If you ever see me in the car, you will probably find me jamming to a song. :P Another hobby of mine is to read. A few of my favorite books/series are:</p>
-        <ul>
-            <li> The Red Queen series</li>
-            <li> Nightshade series</li>
-            <li> The Alchemyst series</li>
-        </ul>
-      
-    </body>
-</html>
+---
+layout: default
+---
+
+<div class="home">
+
+  <h1 class="page-heading">Posts</h1>
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
